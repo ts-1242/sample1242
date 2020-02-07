@@ -11,17 +11,19 @@
     <table class="table table-hover">
       <thead>
         <tr>
-          <th><%= User.human_attribute_name :name %></th>
-          <th><%= User.human_attribute_name :email %></th>
-          <th><%= User.human_attribute_name :created_at %></th>
+          <th><%= User.human_attribute_name :ID %></th> 
+          <th><%= User.human_attribute_name :名前 %></th>
+          <th><%= User.human_attribute_name :メールアドレス %></th>
+          <th><%= User.human_attribute_name :作成日 %></th>
         </tr>
       </thead>
 
       <tbody>
         <tr>
+          <td><%= @user.id %></td>
           <td><%= @user.name %></td>
           <td><%= @user.email %></td>
-          <td><%= @user.created_at %></td>
+          <td><%= @user.created_at.strftime('%Y/%m/%d %H:%M') %></td>
         </tr>
       </tbody>
     </table>
