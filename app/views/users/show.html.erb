@@ -1,31 +1,30 @@
 <% provide(:title, @user.name) %>
 
+
+<p class="center"><br>プロフィール</p>
+
 <div class="row">
-  <div class="col-md-10 col-md-offset-1">
-   <p>
-    <br>
-    プロフィール
-  </p>
-   
-   
-    <table class="table table-hover">
+  <div class="col-md-10 col-md-offset-3">
+
+    <table border="1" width="499" height="300">
       <thead>
         <tr>
-          <th><%= User.human_attribute_name :ID %></th> 
-          <th><%= User.human_attribute_name :名前 %></th>
-          <th><%= User.human_attribute_name :メールアドレス %></th>
-          <th><%= User.human_attribute_name :作成日 %></th>
+          <th class="center", bgcolor="#EEEEEE"><%= User.human_attribute_name :ID %></th> 
+          <td height="35"><%= @user.id %></td>
+        </tr>       
+        <tr>  
+          <th class="center", bgcolor="#EEEEEE"><%= User.human_attribute_name :名前 %></th>
+          <td height="35"><%= @user.name %></td>
+        </tr>
+        <tr>
+          <th class="center", bgcolor="#EEEEEE"><%= User.human_attribute_name :メールアドレス %></th>
+          <td height="35"><%= @user.email %></td>
+        </tr>  
+        <tr>  
+          <th class="center", bgcolor="#EEEEEE"><%= User.human_attribute_name :作成日 %></th>
+          <td height="35"><%= @user.created_at.strftime('%Y/%m/%d %H:%M') %></td>
         </tr>
       </thead>
-
-      <tbody>
-        <tr>
-          <td><%= @user.id %></td>
-          <td><%= @user.name %></td>
-          <td><%= @user.email %></td>
-          <td><%= @user.created_at.strftime('%Y/%m/%d %H:%M') %></td>
-        </tr>
-      </tbody>
     </table>
-  </div>    
+ </div>    
 </div>
