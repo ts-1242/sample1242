@@ -10,10 +10,10 @@
    <p> 
     ↓↓初めてのご利用↓↓
    </p>
-    <left>
-    <%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-primary" %>
-   </left>
- </div>
+     <left>
+     <%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-secondly" %>
+     </left>
+   </div>
  
  <div id="right">
  
@@ -32,10 +32,13 @@
         <%= f.check_box :remember_me, id: "remember-me" %>
         <span>ログイン情報を記憶する</span>
       <% end %>
-     
-       <%= f.submit "ログイン", class: "btn btn-primary btn-block btn-login" %>
-　　　
-　　　<% end %>
-     </div>  
-    </div>
-   </div>
+       
+       　<% if logged_in? %>
+          <%= f.submit "ログイン状態です", class: "btn btn-primary btn-block btn-login" %>
+　　　   <% else %> 
+　　　    <%= f.submit "ログイン", class: "btn btn-primary btn-block btn-login" %>
+　　　   <% end %>
+　　 <% end %>
+    </div>  
+   </div> 
+  </div>
