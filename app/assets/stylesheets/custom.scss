@@ -32,6 +32,11 @@ textarea {
   margin-bottom: 10px;
 }
 
+.no1 {
+  background-color: #EEEEEE;
+}
+
+
 #main {
   float: left;
   width: 200px;
@@ -93,6 +98,13 @@ p {
     color: #fff;
     background-color: #f0f;
 }
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    color: #fff;
+    background-color: #f0f;
+}
+
+
 .alert {
     padding: 30px;
     margin-bottom: 10px;
