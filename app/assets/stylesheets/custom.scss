@@ -23,7 +23,14 @@ textarea {
     /* background-color: #eeeeee; */
 }
 
-
+.jumbotron.example1 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #FFF; 
+}
+    
 .center {
   text-align: center
 }
@@ -40,14 +47,20 @@ textarea {
 } 
 
 #right {
-  float: right;
-  width: 400px;
+    float: right;
+    width: 390px;
+}
+
+.btn-block {
+    display: block;
+    width: 15%;
 }
 
 .btn-secondly {
     color: #fff;
     background-color: #00cc00;
     border-color: #00cc00;
+    width: 190px;
 }
 /* タイポグラフィ */
 
@@ -76,11 +89,16 @@ h2 {
 p {
     font-size: 2.1em;
     line-height: 2.0em;
+    margin: 0 0 0px;
 }
 
-p.example1 { font-size: xx-large; }
+p.example1 { font-size: xx-large;
+             font-weight: bold;
+}
 p.example2 { font-size: x-large; }
-p.example3 { font-size: large; }
+p.example3 { font-size: large;
+             font-weight: bold;
+}
 p.example4 { font-size: medium; }
 p.example5 { font-size: small; }
 p.example6 { font-size: x-small; }
@@ -146,6 +164,7 @@ height: 100px;
 
 textarea.example2 {
 width: 80%;
+height: 25px;
 }
 
 
