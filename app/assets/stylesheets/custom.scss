@@ -66,6 +66,12 @@ textarea {
     border-color: #00cc00;
     width: 190px;
 }
+.container {
+    padding-right: inherit;
+    padding-left: inherit;
+    margin-right: auto;
+    margin-left: auto;
+}
 /* タイポグラフィ */
 
 h1, h2, h3, h4, h5, h6 {
