@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/index'
+
   get 'posts/index'
 
   get 'tasks/index'
