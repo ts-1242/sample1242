@@ -6,15 +6,26 @@
   <table class="table table-condensed table-hover" id="table-users">
     <thead>
       <tr>
-        <th><%= User.human_attribute_name :name %></th>
+        <th><%= User.human_attribute_name :名前 %></th>
       </tr>
     </thead>
 
     <% @users.each do |user| %>
       <tr>
-        <td><%= link_to user.name, user %></td>
+        <td><%= link_to user.name, user %>
+         <% if current_user.admin? && !current_user?(user) %>
+          <a class="btn btn-login btn-small" href="#" style="margin-left: 10px; margin-top: 0px; font-weight: inherit;">一般</a>
+          <% else %>
+           <a class="btn btn-login btn-small" href="#" style="
+    margin-left: 10px;
+    margin-top: 0px;
+    background-color: #0079cc;
+    font-weight: inherit;
+">管理者</a>
+         <% end %> 
+        </td>
         <td>
-          <% if current_user.admin? && !current_page?(user) %>
+          <% if current_user.admin? && !current_user?(user) %>
             <%= link_to "削除", user, method: :delete,
                 data: { confirm: "削除してよろしいですか？" },
                 class: "btn btn-danger" %>
@@ -22,6 +33,6 @@
         </td>
       </tr>
     <% end %>
-  </table>
+   </table>
   <%= will_paginate %>
 </div>

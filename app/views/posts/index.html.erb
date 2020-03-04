@@ -1,35 +1,38 @@
 <% provide(:title, 'All Users') %>
 <h1>管理者のタスク一覧</h1>
 
+
  <input type="submit" value="タスク新規作成"> 
  <br> 
- <table class="table table-bordered table-condensed table-hover">      
-   <tbody>
-     <thead>
-      <tr>名称</tr>
-      <tr>作成日</tr>
-     </thead> 
-   
-   
+ <br>
+<div class="col-md-10 col-md-offset-1"> 
+ <table class="table table-condensed table-hover" id="table-users">     
+    <thead>
      <tr>
-      <td>
-       <div class="main-posts-index">
-        <div class="container">     
-         <% @posts.each do |post| %>
-          <div class="posts-index-item">
-           <%= post.content %>
-           <%= post.created_at.strftime('%Y/%m/%d') %>
-           <%= link_to "編集", " ", class: "post_edit_button" %>
-           <%= link_to "削除", " ", class: "post_delete_button" %>
-          </div>
-         <% end %>
-        </div>
-       </div> 
-      </td>
+       <th>名称</th>
+       <th>作成日</th>
      </tr>
-　　
-　
-    </tbody>     
+    </thead> 
+   
+   
+    <tr>
+      <td>
+        <% @posts.each do |post| %>
+          <%= post.content %>
+        <% end %>   
+       </td>
+       <td>
+          <% @posts.each do |post| %>        
+           <%= post.created_at.strftime('%Y/%m/%d %H:%M') %>
+          <% end %>  
+       </td>    
+    
+       <td>   
+          <%= link_to "編集", " ", class: "post_edit_button" %>
+       </td>
+       <td>
+          <%= link_to "削除", " ", class: "post_delete_button" %>
+       </td>    
+     </tr>
    </table>
-  
-  
+ </div> 

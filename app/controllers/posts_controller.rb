@@ -12,6 +12,11 @@ class PostsController < ApplicationController
   @posts = Post.all
   end
 
+  def user
+      User.find(self.user_id)
+  end 
+
+
   def show
     @post = Post.find(params[:id])
   end
