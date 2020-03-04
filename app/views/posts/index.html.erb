@@ -14,25 +14,32 @@
      </tr>
     </thead> 
    
-   
+   <% @posts.each do |post| %>
     <tr>
       <td>
-        <% @posts.each do |post| %>
-          <%= post.content %>
-        <% end %>   
+        
+         <div class="posts-index-item">
+          　<%= post.content %>
+       　 </div>　
+           
        </td>
        <td>
-          <% @posts.each do |post| %>        
-           <%= post.created_at.strftime('%Y/%m/%d %H:%M') %>
-          <% end %>  
+               
+           <div class="posts-index-item">
+            <%= post.created_at.strftime('%Y/%m/%d %H:%M') %>
+           </div> 
+           
        </td>    
     
        <td>   
+         <div class="posts-index-item">
           <%= link_to "編集", " ", class: "post_edit_button" %>
+         </div> 
        </td>
        <td>
           <%= link_to "削除", " ", class: "post_delete_button" %>
        </td>    
      </tr>
+    <% end %>  
    </table>
  </div> 
